@@ -3,6 +3,7 @@ import {
   Links,
   LiveReload,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -42,7 +43,7 @@ export function Document({
         <Meta />
         <Links />
       </head>
-      <body className="h-screen relative">
+      <body className=" overflow-y-hidden relative">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -84,13 +85,55 @@ function Layout() {
           info@backstagetalks.com
         </a>
         <div className="flex justify-end">
-          <ul className="w-fit">
-            <li className="text-lg text-gray-800">Issue #1</li>
-            <li className="text-lg text-gray-800">Issue #2</li>
-            <li className="text-lg text-gray-800">Issue #3</li>
-            <li className="text-lg text-gray-800">Issue #4</li>
-            <li className="text-lg text-gray-800">Issue #5</li>
-            <li className="text-lg text-gray-800">Issue #6</li>
+          <ul className="w-fit flex flex-col">
+            <NavLink
+              to="#1"
+              className={({isActive}) =>
+                isActive ? 'text-lg text-gray-800' : 'text-red-500'
+              }
+            >
+              Issue #1
+            </NavLink>
+            <NavLink
+              to="#2"
+              className={({isActive}) =>
+                isActive ? 'text-lg text-gray-800' : 'text-red-500'
+              }
+            >
+              Issue #2
+            </NavLink>
+            <NavLink
+              to="#3"
+              className={({isActive}) =>
+                isActive ? 'text-lg text-gray-800' : 'text-red-500'
+              }
+            >
+              Issue #3
+            </NavLink>
+            <NavLink
+              to="#4"
+              className={({isActive}) =>
+                isActive ? 'text-lg text-gray-800' : 'text-red-500'
+              }
+            >
+              Issue #4
+            </NavLink>
+            <NavLink
+              to="#5"
+              className={({isActive}) =>
+                isActive ? 'text-lg text-gray-800' : 'text-red-500'
+              }
+            >
+              Issue #5
+            </NavLink>
+            <NavLink
+              to="#6"
+              className={({isActive}) =>
+                isActive ? 'text-lg text-gray-800' : 'text-red-500'
+              }
+            >
+              Issue #6
+            </NavLink>
           </ul>
         </div>
       </div>
